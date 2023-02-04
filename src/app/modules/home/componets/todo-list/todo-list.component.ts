@@ -27,4 +27,11 @@ export class TodoListComponent implements OnInit {
     this.taskList.splice(event, 1);
   }
 
+  public deleteTaskListAll(){
+    const confirm = window.confirm("Você Realmente deseja deletar tudo?");
+    if(confirm){
+      this.taskList = [];
+    }
+  }
+
 }

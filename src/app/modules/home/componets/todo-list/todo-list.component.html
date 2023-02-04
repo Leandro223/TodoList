@@ -1,5 +1,5 @@
 <section>
-    <ul>
+    <ul *ngIf="taskList.length">
         <li *ngFor="let item of taskList; let i = index">
             <input type="checkbox" [(ngModel)]="item.checked">
             <input type="text" [(ngModel)]="item.task" [ngClass]="{'checked': item.checked}">
@@ -12,4 +12,4 @@
 </section>
 
 <app-todo-button-add-itens (emitItemTaskList)="setEmitTaskList($event)" ></app-todo-button-add-itens>
-<app-todo-button-delete-all></app-todo-button-delete-all>
+<app-todo-button-delete-all *ngIf="taskList.length" (click)="deleteTaskListAll()"></app-todo-button-delete-all>
