@@ -19,4 +19,8 @@ export class TodoListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public setEmitTaskList(event: string){
+    this.taskList.push({task: event, checked: false});
+  }
+
 }
