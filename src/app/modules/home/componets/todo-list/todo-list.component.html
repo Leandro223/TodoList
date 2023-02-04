@@ -1,10 +1,12 @@
 <section>
     <ul>
-        <li>
-            <input type="checkbox">
-            <input type="text">
+        <li *ngFor="let item of taskList; let i = index">
+            <input type="checkbox" [(ngModel)]="item.checked">
+            <input type="text" [(ngModel)]="item.task" [ngClass]="{'checked': item.checked}">
 
-            <button></button>
+            <button>
+                <img src="assets/icons/icon-trash.svg">
+            </button>
         </li>
     </ul>
 </section>
