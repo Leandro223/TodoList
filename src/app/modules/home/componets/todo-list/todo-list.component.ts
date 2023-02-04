@@ -23,4 +23,8 @@ export class TodoListComponent implements OnInit {
     this.taskList.push({task: event, checked: false});
   }
 
+  public deleteItemTaskList(event: number){
+    this.taskList.splice(event, 1);
+  }
+
 }
